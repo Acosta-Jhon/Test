@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Notas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+  <section class="section" style="height: 90vh;">
+    <div id="app" class="container">
+      <div class="buttons">
+        <label class="label" style="margin-right: 5px;">INGRESE UNA NOTA</label>
+        <button class="button is-primary" @click="mostrarModal = true">+</button>
+      </div>
+      <agregar v-if="mostrarModal" @close="cerrarModal" @done="agregarEstudiante">
+      </agregar>
+      <br />
+      <tabla :data-tabla="lista" @close="cerrarModal" @done='editarEstudiante'>
+      </tabla>
+    </div>
+  </section>
+  <footer>
+    <div class="has-text-centered">
+      <p><strong>Bulma</strong> by <a href="/" target="_blank">Toc Systems</a>. Codigo de practica
+      </p>
+    </div>
+  </footer>
+
+</body>
+<script src="componentes.js"></script>
+<script src="principal.js"></script>
+
+</html>
